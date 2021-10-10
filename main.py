@@ -26,7 +26,10 @@ app.add_middleware(
 )
 
 from pymongo import MongoClient
+# mongodb_uri = 'mongodb+srv://dbUser:chula123@cluster0.nds32.mongodb.net/myFirstDatabase?ssl=true&ssl_cert_reqs=CERT_NONE'
+
 mongodb_uri = 'mongodb+srv://dbUser:chula123@cluster0.nds32.mongodb.net/myFirstDatabase?ssl=true&ssl_cert_reqs=CERT_NONE'
+
 port = 8000
 client = MongoClient(mongodb_uri, port)
 db = client["User"]
