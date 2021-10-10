@@ -72,12 +72,12 @@ class TokenData(BaseModel):
 
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+# @app.get("/")
+# def read_root():
+#     return {"Hello": "World"}
 
 
-@app.get("/hello", response_model=User)
+@app.get("/", response_model=User)
 def read_root(current_user:User = Depends(get_current_user)):
     # print(TokenData(username=username))
     response =  db["users"].find_one({'username':current_user.username})
